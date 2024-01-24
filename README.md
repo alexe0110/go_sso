@@ -28,3 +28,7 @@ sso
 └── tests............ Функциональные тесты
 
 ```
+
+Запуск
+    
+    go run cmd/sso/main.go --config=./config/local.yaml
