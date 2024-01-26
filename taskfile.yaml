@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  run:
+    desc: "Generate code from proto file"
+    cmds:
+      - echo "run cmd/sso/main.go"
+      - go run cmd/sso/main.go --config=./config/local.yaml

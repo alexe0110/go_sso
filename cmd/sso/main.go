@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	app "go_sso/internal/app"
 	"go_sso/internal/config"
 	"log/slog"
 	"os"
@@ -23,6 +24,10 @@ func main() {
 		slog.Any("cfg", cfg),
 		slog.Int("GRPC port", cfg.GRPC.Port),
 	)
+
+	application := app.New(log, cfg.GRPC.Port, cfg.StoragePath, cfg.TokenTTL)
+
+	application.GRPCSrv.MustRun()
 
 	// TODO: объект конфига
 	// TODO: логгер - slog
