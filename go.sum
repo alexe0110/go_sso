@@ -2,6 +2,8 @@ github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak
 github.com/BurntSushi/toml v1.2.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
 github.com/alexe0110/go_proto v0.0.0-20240124062054-4b26b96b8fa7 h1:xvx9uBhOI6NXqin0693Cl4hR6azbCLUZhx6pBmui15g=
 github.com/alexe0110/go_proto v0.0.0-20240124062054-4b26b96b8fa7/go.mod h1:sJ7tM3WkT3Mr3LI84oW6d9fFrVEPobo1MYQl821+q9w=
+github.com/alexe0110/go_proto v0.0.3 h1:o7vokgNp5Y/2H4qg4ZKbJTiPSPU8W9DEb0N7dadwzis=
+github.com/alexe0110/go_proto v0.0.3/go.mod h1:sJ7tM3WkT3Mr3LI84oW6d9fFrVEPobo1MYQl821+q9w=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
 github.com/golang/protobuf v1.5.3 h1:KhyjKVUg7Usr/dYsdSqoFveMYd5ko72D+zANwlG1mmg=
 github.com/golang/protobuf v1.5.3/go.mod h1:XVQd3VNwM+JqD3oG2Ue2ip4fOMUkwXdXDdiuN0vRsmY=
