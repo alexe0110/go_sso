@@ -152,7 +152,7 @@ func (a *Auth) IsAdmin(ctx context.Context, userID int64) (bool, error) {
 	if err != nil {
 		if errors.Is(err, storage.ErrUserNotFound) {
 			log.Warn("user not found", err)
-			return false, fmt.Errorf("%s: %w", op, ErrInvalidAppID)
+			return false, fmt.Errorf("%s: %w", op, ErrUserExists)
 		}
 		return false, fmt.Errorf("%s: %w", op, err)
 	}
