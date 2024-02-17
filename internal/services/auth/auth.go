@@ -16,7 +16,7 @@ type Auth struct {
 	log         *slog.Logger
 	usrProvider UserProvider
 	tokenTTL    time.Duration
-	appProvider AppProivder
+	appProvider AppProvider
 	usrSaver    UserSaver
 }
 
@@ -33,8 +33,8 @@ type UserProvider interface {
 	IsAdmin(ctx context.Context, userID int64) (bool, error)
 }
 
-type AppProivder interface {
-	App(ctx context.Context, appID string) (models.App, error)
+type AppProvider interface {
+	App(ctx context.Context, appID int) (models.App, error)
 }
 
 var (
@@ -48,7 +48,7 @@ func New(
 	log *slog.Logger,
 	userSaver UserSaver,
 	userProvider UserProvider,
-	appProvider AppProivder,
+	appProvider AppProvider,
 	tokenTTL time.Duration,
 ) *Auth {
 	return &Auth{
@@ -65,7 +65,7 @@ func (a Auth) Login(
 	ctx context.Context,
 	email string,
 	password string,
-	appID string,
+	appID int,
 ) (string, error) {
 	const op = "Auth.Login"
 	log := a.log.With(
