@@ -6,3 +6,8 @@ tasks:
     cmds:
       - echo "run cmd/sso/main.go"
       - go run cmd/sso/main.go --config=./config/local.yaml
+
+  migrate:
+    desc: "migrate database"
+    cmds:
+      - go run ./cmd/migrator --storage-path=./storage/sso.db --migration-path=./migrations

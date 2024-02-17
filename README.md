@@ -47,6 +47,9 @@ sso
 
     task run
 
+Запуск миграций (миграции хранятся в папке `migrations`)
+
+    task migrate
 
 
 ### JWT
