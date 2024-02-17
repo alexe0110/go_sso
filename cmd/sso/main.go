@@ -6,6 +6,8 @@ import (
 	"go_sso/internal/config"
 	"log/slog"
 	"os"
+	"os/signal"
+	"syscall"
 )
 
 const (
@@ -27,11 +29,20 @@ func main() {
 
 	application := app.New(log, cfg.GRPC.Port, cfg.StoragePath, cfg.TokenTTL)
 
-	application.GRPCSrv.MustRun()
+	go application.GRPCSrv.MustRun()
 
 	// TODO: объект конфига
 	// TODO: логгер - slog
 	// TODO: инициа приложения app
+
+	stop := make(chan os.Signal, 1)
+	signal.Notify(stop, syscall.SIGTERM, syscall.SIGINT)
+
+	stopValue := <-stop
+	log.Info("stop signal", slog.String("signal", stopValue.String()))
+
+	application.GRPCSrv.Stop()
+	log.Info("stop app")
 }
 
 func setupLogger(env string) *slog.Logger {
